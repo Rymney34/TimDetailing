@@ -4,12 +4,34 @@ import BeforeAfterSlider from "./components/BeforeAfterSlider";
 import PricingSection from "./components/PricingSection";
 import ContactForm from "./components/ContactForm";
 import TealDivider from "./components/TealDivider";
-import Engine3DSection from "./components/Engine3D";
+import Engine3DSection from "./components/Enginge3D";
 import { A, A2 } from "./constants";
 import { services, gallery, testimonials } from "./data";
 import Footer from "./components/Footer";
+import { useState, useEffect } from 'react';
+import PocketBase from 'pocketbase';
+
+const pb = new PocketBase(import.meta.env.VITE_PB_URL || 'http://127.0.0.1:8090');
 
 export default function App() {
+
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    async function fetchServices() {
+      try {
+        const records = await pb.collection('services').getFullList({
+          sort: '-created',
+        });
+        console.log(records)
+        setServices(records);
+      } catch (error) {
+        console.error("Error fetching services:", error);
+      }
+    }
+    fetchServices();
+  }, []);
+
   return (
     <div className="min-h-full bg-[#0b0e14] text-[#dde6f0]">
       <Nav />
