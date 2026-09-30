@@ -1,11 +1,12 @@
 import { A } from "../constants";
 
+
 export default function HeroSection() {
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
             <div className="absolute inset-0">
                 <img
-                    src="https://images.unsplash.com/photo-1608259243654-70c070e0f6ed?w=1800&h=1200&fit=crop&auto=format"
+                    src="../../resources/img/homeMain2.jpg"
                     alt="Luxury car"
                     className="w-full h-full object-cover opacity-30"
                 />
@@ -15,7 +16,7 @@ export default function HeroSection() {
 
             <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
                 <p className="fade-up fade-up-1 text-xs tracking-[0.3em] uppercase mb-6 font-medium" style={{ color: A }}>
-                    Premium Car Detailing · Cardiff, Wales
+                    Local Car Detailing · Cardiff, Wales
                 </p>
                 <h1 className="fade-up fade-up-2 font-display text-6xl md:text-8xl lg:text-9xl text-[#dde6f0] leading-[0.95] mb-8">
                     Your car,<br />

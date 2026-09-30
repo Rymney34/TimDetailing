@@ -10,6 +10,7 @@ import { services, gallery, testimonials } from "./data";
 import Footer from "./components/Footer";
 import { useState, useEffect } from 'react';
 import PocketBase from 'pocketbase';
+import PortfolioGrid from "./components/ourPortfolio/portfolioGrid";
 
 const pb = new PocketBase(import.meta.env.VITE_PB_URL || 'http://127.0.0.1:8090');
 
@@ -67,6 +68,7 @@ export default function App() {
       <PricingSection />
 
       {/* GALLERY */}
+      {/* {<PortfolioGrid/>} */} SOLVE
       <section id="gallery" className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 text-center">
